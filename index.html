@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#101018" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <title>I Can Save All the Heroes!</title>
+    <style>html,body{touch-action:none;overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;background:#000;height:100%;margin:0;overflow:hidden}#game{justify-content:center;align-items:center;width:100%;height:100%;display:flex}canvas{image-rendering:pixelated;touch-action:none}#rotate{z-index:1000;color:#fff;text-align:center;background:#101018;flex-direction:column;justify-content:center;align-items:center;gap:16px;padding:0 24px;font:20px monospace;display:none;position:fixed;inset:0}#rotate p{max-width:22em;margin:0}#rotate .hint{color:#b8b8c8;font-size:14px;line-height:1.5}@media (orientation:portrait) and (pointer:coarse){#rotate{display:flex}}</style>
+    <script type="module" crossorigin src="./assets/index-Bmtsuoyv.js"></script>
+  </head>
+  <body>
+    <div id="game"></div>
+    <!-- The page only sees the screen's orientation, not the phone's: with rotation locked, or in an
+         app's built-in browser, a sideways phone still reads as portrait. The hint covers both. -->
+    <div id="rotate" role="alert">
+      <p>Turn your phone sideways</p>
+      <p class="hint">
+        Already sideways? Screen rotation is locked. Turn off Portrait Orientation Lock in Control
+        Center (iPhone) or turn on Auto-rotate (Android).
+      </p>
+      <p class="hint">Opened from inside another app? Open the link in Safari or Chrome instead.</p>
+    </div>
+    <script>
+      // No long-press menu on the page.
+      window.addEventListener('contextmenu', (e) => e.preventDefault());
+    </script>
+  </body>
+</html>
